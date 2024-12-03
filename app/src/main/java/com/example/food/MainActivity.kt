@@ -127,7 +127,8 @@ fun Header() {
         shape = RoundedCornerShape(8.dp)
     ) {
         Row(
-            Modifier.fillMaxSize(),
+            Modifier
+                .fillMaxWidth( ),
             verticalAlignment = Alignment.CenterVertically
         ) {
             QrButton()
