@@ -127,8 +127,7 @@ fun Header() {
         shape = RoundedCornerShape(8.dp)
     ) {
         Row(
-            Modifier
-                .fillMaxWidth( ),
+            Modifier.fillMaxSize(),
             verticalAlignment = Alignment.CenterVertically
         ) {
             QrButton()
@@ -185,8 +184,7 @@ fun QrButton(){
     IconButton(
         onClick = {},
         modifier = Modifier
-            .fillMaxWidth()
-            .aspectRatio(1f)
+            .size(48.dp)
     ) {
         Icon(
             painter = painterResource(id = R.drawable.ic_scan),
