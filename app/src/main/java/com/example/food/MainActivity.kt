@@ -118,8 +118,28 @@ fun Content(){
 
 @Composable
 fun Header() {
+    Card(
+        Modifier
+            .height(64.dp)
+            .padding(horizontal = 16.dp),
+        elevation = CardDefaults.elevatedCardElevation(4.dp),
+        shape = RoundedCornerShape(8.dp)
+    ) {
+        Row(
+            Modifier.fillMaxSize(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            QRButton()
+        }
+    }
+}
+
+@Composable
+fun QRButton(){
+
 
 }
+
 
 @Composable
 @Preview(showBackground = true, showSystemUi = true)
@@ -128,6 +148,3 @@ fun PrevScreen(){
         HomeScreen()
     }
 }
-
-
-// test commit
