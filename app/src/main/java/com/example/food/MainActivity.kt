@@ -19,6 +19,7 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.foundation.*
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -129,15 +130,81 @@ fun Header() {
             Modifier.fillMaxSize(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            QRButton()
+            QrButton()
+            VerticalDevider()
+            Row(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .weight(1f)
+                    .clickable { }
+                    .padding(horizontal = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_money),
+                    contentDescription ="",
+                    tint = Color(0xFF6FCF97)
+                )
+                Column(
+                    modifier = Modifier
+                        .padding(8.dp)
+                ) {
+                    Text(text = "$120", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                    Text(text = "Top up", color = MaterialTheme.colorScheme.primary, fontSize = 12.sp)
+                }
+            }
+            VerticalDevider()
+            Row(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .weight(1f)
+                    .clickable { }
+                    .padding(horizontal = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_coin),
+                    contentDescription ="",
+                    tint = Color.Magenta
+                )
+                Column(
+                    modifier = Modifier
+                        .padding(8.dp)
+                ) {
+                    Text(text = "$12", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                    Text(text = "Top up", color = Color.LightGray, fontSize = 12.sp)
+                }
+            }
         }
     }
 }
 
 @Composable
-fun QRButton(){
+fun QrButton(){
+    IconButton(
+        onClick = {},
+        modifier = Modifier
+            .fillMaxWidth()
+            .aspectRatio(1f)
+    ) {
+        Icon(
+            painter = painterResource(id = R.drawable.ic_scan),
+            contentDescription = "",
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+        )
+    }
+}
 
-
+@Composable
+fun VerticalDevider() {
+    HorizontalDivider(
+        color = Color(0xFFF1F1F1),
+        modifier = Modifier
+            .width(1.dp)
+            .height(32.dp)
+    )
 }
 
 
