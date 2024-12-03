@@ -124,7 +124,7 @@ fun Header() {
             .height(64.dp)
             .padding(horizontal = 16.dp),
         elevation = CardDefaults.elevatedCardElevation(4.dp),
-        shape = RoundedCornerShape(8.dp)
+        shape = RoundedCornerShape(100.dp)
     ) {
         Row(
             Modifier.fillMaxSize(),
